@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl782fdmkc6b4"]
+[gd_scene load_steps=4 format=3 uid="uid://dl782fdmkc6b4"]
 
 [ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario.tscn" id="1_pssa7"]
 [ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="2_7w8s4"]
+[ext_resource type="Script" uid="uid://b7sdi6kqbipg2" path="res://scripts/player_trail.gd" id="3_7w8s4"]
 
 [node name="Example" type="Node"]
 
@@ -9,8 +10,19 @@
 follow_viewport_enabled = true
 
 [node name="PlayerLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 follow_viewport_enabled = true
+
+[node name="PlayerTrail" type="Line2D" parent="PlayerLayer" node_paths=PackedStringArray("player")]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 128.0
+default_color = Color(0.3158058, 0.15453127, 0.088066556, 1)
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_7w8s4")
+player = NodePath("../Player")
 
 [node name="Player" parent="PlayerLayer" instance=ExtResource("2_7w8s4")]
 position = Vector2(960, 800)
@@ -18,10 +30,14 @@ position = Vector2(960, 800)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerLayer/Player"]
 remote_path = NodePath("../../../Camera2D")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 800)
+limit_top = -1080
+limit_bottom = 1620
+position_smoothing_enabled = true
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 99
-visible = false
-follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="UILayer"]
 layout_mode = 3
@@ -42,9 +58,3 @@ offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Hello world!"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 800)
-limit_top = -1080
-limit_bottom = 1620
-position_smoothing_enabled = true
