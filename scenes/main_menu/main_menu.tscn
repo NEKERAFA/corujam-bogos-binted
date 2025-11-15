@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqwrtypa35sjq"]
+[gd_scene load_steps=3 format=3 uid="uid://bqwrtypa35sjq"]
 
 [ext_resource type="Script" uid="uid://cs3pp7aqkfw4w" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="StyleBox" uid="uid://bpyjnjfgcv5ad" path="res://assets/theme_overrides/styleBox_for_buttons.tres" id="2_0ebjn"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -42,20 +43,24 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_0ebjn")
 text = "Ci"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_0ebjn")
 text = "No "
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_0ebjn")
 text = "nono era broma perdón"
 
 [node name="Button4" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_0ebjn")
 text = "vale :C"
 
 [node name="Label" type="Label" parent="."]
@@ -71,7 +76,7 @@ offset_right = 249.5
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3529412, 0.039215688, 0.3529412, 1)
 theme_override_font_sizes/font_size = 30
 text = "¿Me querrías si fuese un gusanito?"
 horizontal_alignment = 1

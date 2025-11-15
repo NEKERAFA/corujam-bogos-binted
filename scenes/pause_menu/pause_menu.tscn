@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d074aontaxdo0"]
+[gd_scene load_steps=4 format=3 uid="uid://d074aontaxdo0"]
 
 [ext_resource type="Script" uid="uid://b6o0vkqarp0s3" path="res://scenes/pause_menu/pause_menu.gd" id="1_5bgjm"]
+[ext_resource type="StyleBox" uid="uid://bpyjnjfgcv5ad" path="res://assets/theme_overrides/styleBox_for_buttons.tres" id="2_qcmsd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68e08"]
 bg_color = Color(1, 0.6392157, 1, 1)
@@ -46,10 +47,12 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_qcmsd")
 text = "Continuar"
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_qcmsd")
 text = "Salir"
 
 [node name="Label" type="Label" parent="Panel"]
@@ -62,7 +65,7 @@ offset_top = 40.0
 offset_right = 23.5
 offset_bottom = 63.00001
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3529412, 0.039215688, 0.3529412, 1)
 theme_override_font_sizes/font_size = 30
 text = "Pausa"
 
