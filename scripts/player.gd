@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Worm
 
 const MAX_ANGLE: float = 45
 const MAX_SPEED: float = 250.0
@@ -23,6 +24,7 @@ func _ready() -> void:
 		_worm_part.worm_part_data.previous_part_data = _previous_part_data
 		_worm_part.n_frames = n_frames
 		_worm_part.position.x = position.x - offset * (n+1)
+		_worm_part.position.y = position.y
 		_previous_part_data = _worm_part.worm_part_data
 		
 	worm_array.reverse()
