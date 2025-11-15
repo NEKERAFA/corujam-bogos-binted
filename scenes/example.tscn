@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl782fdmkc6b4"]
+
+[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="1_o34ws"]
+[ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scenes/camera_controller.gd" id="2_pssa7"]
+
+[node name="Example" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(500, 0)
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+scroll_offset = Vector2(710, 217)
+repeat_size = Vector2(128, 128)
+autoscroll = Vector2(-128, 0)
+repeat_times = 9
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+position = Vector2(64, 64)
+texture = ExtResource("1_o34ws")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(500, 64)
+script = ExtResource("2_pssa7")
