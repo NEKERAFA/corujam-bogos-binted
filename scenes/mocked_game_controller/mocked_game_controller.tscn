@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy3t6tlinr67y"]
+
+[ext_resource type="PackedScene" uid="uid://ddcfl3r22fbd8" path="res://scenes/mocked_scene/mocked_scene.tscn" id="1_bwuq4"]
+[ext_resource type="Script" uid="uid://dg4ouy8m5nupp" path="res://scenes/mocked_game_controller/mocked_game_controller.gd" id="1_y3jgb"]
+[ext_resource type="PackedScene" uid="uid://d074aontaxdo0" path="res://scenes/pause_menu/pause_menu.tscn" id="2_y3jgb"]
+
+[node name="MockerGameController" type="Node"]
+process_mode = 3
+script = ExtResource("1_y3jgb")
+
+[node name="MockedScene" parent="." instance=ExtResource("1_bwuq4")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_y3jgb")]
+visible = false
