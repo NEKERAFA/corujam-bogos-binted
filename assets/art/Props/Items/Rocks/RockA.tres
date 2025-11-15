@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://ble100dystxnm"]
+
+[ext_resource type="Texture2D" uid="uid://c3y0u4l5inlsc" path="res://assets/art/Props/Items/Rocks/RockA/Idle/T_Rocks_A_Idle.png" id="1_03xel"]
+[ext_resource type="Texture2D" uid="uid://crjeqiheihhm7" path="res://assets/art/Props/Items/Rocks/RockA/Break/T_Rocks_A_Break_00.png" id="2_onrlc"]
+[ext_resource type="Texture2D" uid="uid://c42ymhdlfyb3s" path="res://assets/art/Props/Items/Rocks/RockA/Break/T_Rocks_A_Break_01.png" id="3_ddgkp"]
+[ext_resource type="Texture2D" uid="uid://uxuqpljn4hei" path="res://assets/art/Props/Items/Rocks/RockA/Break/T_Rocks_A_Break_02.png" id="4_ogqua"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_03xel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_onrlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ddgkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ogqua")
+}],
+"loop": false,
+"name": &"break",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_03xel")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]

@@ -16,4 +16,4 @@ func _physics_process(_delta: float) -> void:
 		points[0] = (player.get_node('Player') as Worm).worm_array.back().global_position
 		for point_idx in range(points.size() - 1, 0, -1):
 			points[point_idx] = points[point_idx - 1]
-			points[point_idx].x += GameManager.movement * _delta
+			points[point_idx].x += GameManager.movement * _delta * 4

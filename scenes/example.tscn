@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl782fdmkc6b4"]
 
-[ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario.tscn" id="1_pssa7"]
+[ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="1_pssa7"]
 [ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="2_7w8s4"]
 [ext_resource type="Script" uid="uid://b7sdi6kqbipg2" path="res://scripts/player_trail.gd" id="3_7w8s4"]
 [ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="4_ucs8h"]
@@ -16,7 +16,7 @@ follow_viewport_enabled = true
 
 [node name="PlayerTrail" type="Line2D" parent="PlayerLayer" node_paths=PackedStringArray("player")]
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-width = 128.0
+width = 50.0
 default_color = Color(0.3158058, 0.15453127, 0.088066556, 1)
 texture_mode = 1
 joint_mode = 2
@@ -26,13 +26,10 @@ script = ExtResource("3_7w8s4")
 player = NodePath("../Player")
 
 [node name="Player" parent="PlayerLayer" instance=ExtResource("2_7w8s4")]
-position = Vector2(960, 800)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerLayer/Player"]
-remote_path = NodePath("../../../Camera2D")
+position = Vector2(960, 540)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(960, 800)
+position = Vector2(960, 540)
 limit_bottom = 1620
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0

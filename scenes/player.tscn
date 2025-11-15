@@ -1,10 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8wtquj2yi8bp"]
+[gd_scene load_steps=11 format=3 uid="uid://b8wtquj2yi8bp"]
 
 [ext_resource type="Script" uid="uid://cofjfptlde4xx" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://ceuxbr3laaomn" path="res://assets/art/PlayerTextures/Head/Hit/T_PlayerWorm_Head_Hit_00.png" id="2_smehm"]
+[ext_resource type="Texture2D" uid="uid://2q61f2dumgo3" path="res://assets/art/PlayerTextures/Head/Hit/T_PlayerWorm_Head_Hit_01.png" id="3_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://nfnb7eoqt1i5" path="res://assets/art/PlayerTextures/Head/Hit/T_PlayerWorm_Head_Hit_02.png" id="4_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dpwjmx28xu4n1" path="res://assets/art/PlayerTextures/Head/Walk/T_PlayerWorm_Head_Walk_00.png" id="5_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://bome5mb2ewpdq" path="res://assets/art/PlayerTextures/Head/Walk/T_PlayerWorm_Head_Walk_01.png" id="6_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://bv5al53dj4gbu" path="res://assets/art/PlayerTextures/Head/Walk/T_PlayerWorm_Head_Walk_02.png" id="7_jej6c"]
+[ext_resource type="Texture2D" uid="uid://dfg58737jncwn" path="res://assets/art/PlayerTextures/Head/Walk/T_PlayerWorm_Head_Walk_03.png" id="8_f1ej7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oprun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y4r1p")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d2wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jej6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f1ej7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 64.12488
+radius = 32.06
 
 [node name="Worm" type="Node2D"]
 
@@ -23,8 +63,11 @@ text = "Jump with SPACE"
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_3vyb7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_g2els")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_oprun")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.26753077
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_g2els")

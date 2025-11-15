@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://1o3l5x8dx3kr"]
 
 [ext_resource type="Script" uid="uid://dbgdidt8r2fg1" path="res://scenes/projectile/projectile.gd" id="1_2dulq"]
-[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="2_lw0th"]
+[ext_resource type="SpriteFrames" uid="uid://ble100dystxnm" path="res://assets/art/Props/Items/Rocks/RockA.tres" id="2_2dulq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tldn6"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="Projectile" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,6 +13,7 @@ script = ExtResource("1_2dulq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tldn6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-texture = ExtResource("2_lw0th")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_2dulq")
+animation = &"idle"
+autoplay = "idle"

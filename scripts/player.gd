@@ -11,19 +11,19 @@ var worm_part_data := WormPartData.new()
 var worm_part = preload("res://scenes/worm/worm_part.tscn")
 var worm_array: Array[WormPart] = []
 var n_parts: int = 5
-var n_frames: int = 12
-var offset: float = 50.0
-var max_distance: float = 50.0
+var n_frames: int = 6
+var offset: float = 28.0
+var max_distance: float = 25.0
 
-var min_depth: float = 10.0
+var min_depth: float = 100.0
 var max_depth: float = 500.0
-var jump_margin: float = 25.0
+var jump_margin: float = 50.0
 var jump_multiplier: float = 2
 var is_jumping: bool = false
 
 func _ready() -> void:
 	z_index = 1
-	jump_label.global_position.y = -25
+	jump_label.global_position.y = -100
 	var _previous_part_data = worm_part_data
 	for n in n_parts:
 		var _worm_part: WormPart = worm_part.instantiate()
@@ -58,22 +58,22 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y = move_toward(velocity.y, 0, delta * TURN_SPEED)
 		rotation = deg_to_rad(get_angle())
-		position.y = clamp(position.y, min_depth, max_depth)
+		global_position.y = clamp(global_position.y, min_depth, max_depth)
 		jump_label.visible = can_jump()
 	else:
 		velocity.y += get_gravity().y * delta
+	move_and_slide()
 	worm_part_data.positions_array.insert(0, position.y)
 	update_worm_parts()
-	move_and_slide()
 
 func start_jump() -> void:
 	velocity.y = GameManager.movement * jump_multiplier
 
 func can_jump() -> bool:
-	return position.y <= min_depth + jump_margin
+	return global_position.y <= min_depth + jump_margin
 
 func get_angle() -> float:
-	if position.y > min_depth and position.y < max_depth:
+	if global_position.y > min_depth and global_position.y < max_depth:
 		return (velocity.y * MAX_ANGLE) / MAX_SPEED
 	else:
 		return 0

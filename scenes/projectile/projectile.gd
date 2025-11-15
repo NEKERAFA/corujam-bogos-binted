@@ -14,11 +14,11 @@ func _ready() -> void:
 	if(1==1):
 		#Change sprite to enemy
 		print_debug("Enemy")
-		$Sprite2D.modulate="#ff0000"
+		$AnimatedSprite2D.modulate="#ff0000"
 	else:
 		#change sprite to friend
 		print_debug("Friend")
-		$Sprite2D.modulate="#00ff00"
+		$AnimatedSprite2D.modulate="#00ff00"
 	pass # Replace with function body.
 
 
