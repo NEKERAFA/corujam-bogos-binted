@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d074aontaxdo0"]
 
 [ext_resource type="Script" uid="uid://b6o0vkqarp0s3" path="res://scenes/pause_menu/pause_menu.gd" id="1_5bgjm"]
+[ext_resource type="StyleBox" uid="uid://c3vu5hmglgjje" path="res://assets/theme_overrides/pink_pannel.tres" id="2_10tpt"]
 [ext_resource type="StyleBox" uid="uid://bpyjnjfgcv5ad" path="res://assets/theme_overrides/styleBox_for_buttons.tres" id="2_qcmsd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68e08"]
-bg_color = Color(1, 0.6392157, 1, 1)
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -29,7 +27,7 @@ layout_mode = 1
 offset_top = 374.0
 offset_right = 1920.0
 offset_bottom = 707.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_68e08")
+theme_override_styles/panel = ExtResource("2_10tpt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
