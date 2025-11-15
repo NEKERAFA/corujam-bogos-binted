@@ -1,6 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddcfl3r22fbd8"]
+[gd_scene load_steps=5 format=3 uid="uid://ddcfl3r22fbd8"]
 
 [ext_resource type="Script" uid="uid://drhhtx7kmn0yb" path="res://scenes/mocked_scene/mocked_scene.gd" id="1_ixuk2"]
+
+[sub_resource type="Animation" id="Animation_03rey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("yuhu_label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ixuk2"]
+resource_name = "yuhu_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("yuhu_label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1, 2, 2.5, 3),
+"transitions": PackedFloat32Array(2, 2, -4, 4, 4, 4),
+"update": 0,
+"values": [Vector2(-100, 200), Vector2(125, 200), Vector2(100, 200), Vector2(100, 200), Vector2(125, 200), Vector2(-100, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cerkn"]
+_data = {
+&"RESET": SubResource("Animation_03rey"),
+&"yuhu_animation": SubResource("Animation_ixuk2")
+}
 
 [node name="MockedScene" type="Node"]
 script = ExtResource("1_ixuk2")
@@ -19,3 +56,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "Estamos en partida ole"
+
+[node name="yuhu_label" type="Label" parent="."]
+offset_right = 79.00014
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "Yuhu!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cerkn")
+}
