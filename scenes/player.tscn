@@ -8,6 +8,18 @@ radius = 64.12488
 
 [node name="Worm" type="Node2D"]
 
+[node name="JumpLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -127.0
+offset_right = 71.0
+offset_bottom = -98.0
+grow_horizontal = 2
+text = "Jump with SPACE"
+
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_3vyb7")
 
