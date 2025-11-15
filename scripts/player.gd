@@ -10,8 +10,8 @@ var worm_part_data := WormPartData.new()
 var worm_part = preload("res://scenes/worm/worm_part.tscn")
 var worm_array: Array[WormPart] = []
 var n_parts: int = 5
-var n_frames: int = 12
-var offset: float = 50.0
+var n_frames: int = 6
+var offset: float = 28.0
 
 func _ready() -> void:
 	z_index = 1
