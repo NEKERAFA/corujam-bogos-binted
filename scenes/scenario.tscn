@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://brvpvtqvfbld8"]
+
+[ext_resource type="Texture2D" uid="uid://bqbk7ttd87e27" path="res://icon.svg" id="1_ih08i"]
+[ext_resource type="Script" uid="uid://dkg1uh35dgey5" path="res://scripts/scenario_controller.gd" id="1_w4sjf"]
+
+[node name="Scenario" type="CanvasLayer"]
+script = ExtResource("1_w4sjf")
+
+[node name="Sky" type="Parallax2D" parent="."]
+repeat_size = Vector2(128, 0)
+repeat_times = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+modulate = Color(0.673067, 0.8147466, 0.87365013, 1)
+position = Vector2(960, 412)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sky"]
+modulate = Color(0.673067, 0.8147466, 0.87365013, 1)
+position = Vector2(960, 284)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sky"]
+modulate = Color(0.673067, 0.8147466, 0.87365013, 1)
+position = Vector2(960, 156)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sky"]
+modulate = Color(0.673067, 0.8147466, 0.87365013, 1)
+position = Vector2(960, 28)
+texture = ExtResource("1_ih08i")
+
+[node name="Ground" type="Parallax2D" parent="."]
+repeat_size = Vector2(128, 0)
+repeat_times = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+modulate = Color(0.12156863, 1, 0.23921569, 1)
+position = Vector2(960, 540)
+texture = ExtResource("1_ih08i")
+
+[node name="Underground" type="Parallax2D" parent="."]
+repeat_size = Vector2(128, 0)
+repeat_times = 16
+
+[node name="Sprite2D2" type="Sprite2D" parent="Underground"]
+modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
+position = Vector2(960, 668)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Underground"]
+modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
+position = Vector2(960, 796)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Underground"]
+modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
+position = Vector2(960, 924)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Underground"]
+modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
+position = Vector2(960, 1052)
+texture = ExtResource("1_ih08i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Underground"]
+modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
+position = Vector2(960, 1180)
+texture = ExtResource("1_ih08i")
