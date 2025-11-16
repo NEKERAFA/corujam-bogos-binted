@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dl782fdmkc6b4"]
+[gd_scene load_steps=18 format=3 uid="uid://dl782fdmkc6b4"]
 
 [ext_resource type="Script" uid="uid://qa18t6jllwdq" path="res://scenes/game/game.gd" id="1_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="2_5i0tg"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cp7su6couqxll" path="res://scenes/end_game_menu/end_game_menu.tscn" id="7_87uf6"]
 [ext_resource type="PackedScene" uid="uid://d074aontaxdo0" path="res://scenes/pause_menu/pause_menu.tscn" id="8_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://ctjfaoxgvsgyx" path="res://scenes/music_controller/music_controller.tscn" id="9_2a8rs"]
+[ext_resource type="Texture2D" uid="uid://cloqldckcaqv3" path="res://assets/keyboard_arrow_up.png" id="9_ftsea"]
+[ext_resource type="Texture2D" uid="uid://dom2tmm32nvec" path="res://assets/keyboard_arrow_down.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://b1tgrys41cglc" path="res://assets/art/keyboard_space.png" id="11_3xj4h"]
 [ext_resource type="PackedScene" uid="uid://bbjj4ssebar70" path="res://scenes/ranking/ranking.tscn" id="11_kp23o"]
 
 [sub_resource type="Animation" id="Animation_2a8rs"]
@@ -117,6 +120,23 @@ player = NodePath("../PlayerLayer/Player")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 99
+
+[node name="Android Button" type="Node2D" parent="UILayer"]
+
+[node name="Up" type="TouchScreenButton" parent="UILayer/Android Button"]
+position = Vector2(800, 206)
+texture_normal = ExtResource("9_ftsea")
+action = "up"
+
+[node name="Down" type="TouchScreenButton" parent="UILayer/Android Button"]
+position = Vector2(800, 302)
+texture_normal = ExtResource("10_otnwt")
+action = "down"
+
+[node name="Jump" type="TouchScreenButton" parent="UILayer/Android Button"]
+position = Vector2(100, 270)
+texture_normal = ExtResource("11_3xj4h")
+action = "jump"
 
 [node name="Control" type="Control" parent="UILayer"]
 layout_mode = 3

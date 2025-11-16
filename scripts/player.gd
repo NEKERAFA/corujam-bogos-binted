@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if not is_jumping:
-		var direction := Input.get_axis("ui_down", "ui_up")
+		var direction := Input.get_axis("down", "up")
 		if direction != 0:
 			if direction > 0:
 				velocity.y = move_toward(velocity.y, -MAX_SPEED, delta * TURN_SPEED)
