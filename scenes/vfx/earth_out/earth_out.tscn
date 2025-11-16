@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyvtjrgyvh3kr"]
+
+[ext_resource type="Texture2D" uid="uid://dgniqprpnwe1b" path="res://assets/art/VFX/VFX_Earth_Out_00.png" id="1_mndjc"]
+[ext_resource type="Texture2D" uid="uid://b7xx2a2homeku" path="res://assets/art/VFX/VFX_Earth_Out_01.png" id="2_bjakx"]
+[ext_resource type="Texture2D" uid="uid://pxn4fgrro6xn" path="res://assets/art/VFX/VFX_Earth_Out_02.png" id="3_wbttq"]
+[ext_resource type="Texture2D" uid="uid://bjsqomkjq5ngx" path="res://assets/art/VFX/VFX_Earth_Out_03.png" id="4_c3yi2"]
+[ext_resource type="Texture2D" uid="uid://c7tn63mt8ovkn" path="res://assets/art/VFX/VFX_Earth_Out_04.png" id="5_xtmd2"]
+[ext_resource type="Texture2D" uid="uid://ck2g24bbli73i" path="res://assets/art/VFX/VFX_Earth_Out_05.png" id="6_ap02j"]
+[ext_resource type="Script" uid="uid://dc8kulr2aqr44" path="res://scenes/vfx/earth_out/earth_out.gd" id="7_e1sqw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvvx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mndjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bjakx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wbttq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c3yi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xtmd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ap02j")
+}],
+"loop": false,
+"name": &"earth_out",
+"speed": 5.0
+}]
+
+[node name="earth_out" type="AnimatedSprite2D"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_yvvx2")
+animation = &"earth_out"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("7_e1sqw")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
