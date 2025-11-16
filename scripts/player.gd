@@ -1,6 +1,11 @@
 extends CharacterBody2D
 class_name Worm
 
+## Signal emitted when player starts the jump
+signal jumped
+## Signal emitted when player reaches max height
+signal max_height_reached(height: float)
+
 const MAX_ANGLE: float = 45
 const MAX_SPEED: float = 250.0
 const TIME_MAX_SPEED: float = 0.5
@@ -51,6 +56,7 @@ func _ready() -> void:
 	for worm_part in worm_array:
 		get_parent().add_child.call_deferred(worm_part)
 	worm_array.reverse()
+	GameManager.set_player(self)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and can_jump():
@@ -73,6 +79,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Check if the player has reached maximum height to stop the camera
 		if velocity.y > 0:
+			max_height_reached.emit(global_position.y)
 			get_viewport().get_camera_2d().player = null
 		velocity.y += get_gravity().y * delta
 		rotation = deg_to_rad(get_angle())
@@ -83,6 +90,7 @@ func _physics_process(delta: float) -> void:
 	update_worm_parts()
 
 func start_jump() -> void:
+	jumped.emit()
 	velocity.y = GameManager.movement * jump_multiplier
 
 func can_jump() -> bool:
