@@ -8,6 +8,7 @@ var player: Node2D = null
 
 
 func _ready() -> void:
+	$UILayer/Control/TutorialAnimation.play("tutorial")
 	GameManager.game_is_started = true
 	GameManager.max_height_reached.connect(_on_max_height_reached)
 

@@ -16,14 +16,6 @@ var has_broken=false
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames=sprite
 	self.set_linear_velocity(speed)
-	#TODO meter el sprite en vez de los modulate
-	if(1==1):
-		#Change sprite to enemy
-		print_debug("Enemy")
-		
-	else:
-		#change sprite to friend
-		print_debug("Friend")
 	pass # Replace with function body.
 
 

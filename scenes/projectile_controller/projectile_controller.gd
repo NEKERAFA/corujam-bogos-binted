@@ -2,7 +2,7 @@ extends Node2D
 var projectile_node = preload("res://scenes/projectile/projectile.tscn")
 var rng = RandomNumberGenerator.new()
 const leave_sprites = [preload("res://assets/art/Props/Items/Leaves/LeafA.tres"),preload("res://assets/art/Props/Items/Leaves/LeafB.tres")]
-const rock_sprites = [preload("res://assets/art/Props/Items/Rocks/RockA.tres"),preload("res://assets/art/Props/Items/Rocks/RockA.tres")]
+const rock_sprites = [preload("res://assets/art/Props/Items/Rocks/RockA.tres"),preload("res://assets/art/Props/Items/Rocks/RockB.tres")]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
