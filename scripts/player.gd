@@ -6,7 +6,7 @@ const MAX_SPEED: float = 250.0
 const TIME_MAX_SPEED: float = 0.5
 const TURN_SPEED: float = 2500.0
 
-@onready var jump_label: Label = $"../JumpLabel"
+@onready var jump_label := %JumpLabel
 var worm_part_data := WormPartData.new()
 var worm_part = preload("res://scenes/worm/worm_part.tscn")
 var worm_array: Array[WormPart] = []

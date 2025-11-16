@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cup2q0jkyo2dn"]
+
+[ext_resource type="FontFile" uid="uid://d2gm1i8vqq7nw" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_12gwx"]
+
+[resource]
+Label/fonts/font = ExtResource("1_12gwx")
