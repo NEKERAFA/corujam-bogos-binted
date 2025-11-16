@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bxghpfw0pkbef"]
+
+[ext_resource type="Texture2D" uid="uid://c7fywlkjdbss2" path="res://assets/art/Props/Items/Leaves/LeafA/Eat/T_Leaf_A_Eat_00.png" id="1_pcegf"]
+[ext_resource type="Texture2D" uid="uid://ra5ajuv1n1xy" path="res://assets/art/Props/Items/Leaves/LeafA/Eat/T_Leaf_A_Eat_01.png" id="2_btqmn"]
+[ext_resource type="Texture2D" uid="uid://bp81xext40hb1" path="res://assets/art/Props/Items/Leaves/LeafA/Eat/T_Leaf_A_Eat_02.png" id="3_mq2ey"]
+[ext_resource type="Texture2D" uid="uid://c66avfok8oi2r" path="res://assets/art/Props/Items/Leaves/LeafA/Idle/T_Leaf_A_Idle.png" id="4_ehkds"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pcegf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_btqmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mq2ey")
+}],
+"loop": false,
+"name": &"break",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ehkds")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
