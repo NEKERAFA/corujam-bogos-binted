@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddcfl3r22fbd8"]
+[gd_scene load_steps=6 format=3 uid="uid://ddcfl3r22fbd8"]
 
 [ext_resource type="Script" uid="uid://drhhtx7kmn0yb" path="res://scenes/mocked_scene/mocked_scene.gd" id="1_ixuk2"]
+[ext_resource type="PackedScene" uid="uid://e833sirjobbp" path="res://scenes/projectile_controller/projectile_controller.tscn" id="2_03rey"]
 
 [sub_resource type="Animation" id="Animation_03rey"]
 length = 0.001
@@ -67,3 +68,6 @@ text = "Yuhu!"
 libraries = {
 &"": SubResource("AnimationLibrary_cerkn")
 }
+
+[node name="ProjectileController" parent="." instance=ExtResource("2_03rey")]
+position = Vector2(0, 520)

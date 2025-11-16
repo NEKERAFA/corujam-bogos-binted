@@ -4,12 +4,12 @@ enum ProjectileTypeEnum {
 	ENEMY,
 	FRIEND
 }
-@export var speed:int=1
+@export var speed:Vector2
 @export var type:ProjectileTypeEnum = ProjectileTypeEnum.ENEMY
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.set_linear_velocity(Vector2(-speed, 0))
+	self.set_linear_velocity(speed)
 	#TODO meter el sprite en vez de los modulate
 	if(1==1):
 		#Change sprite to enemy
@@ -18,7 +18,6 @@ func _ready() -> void:
 		#change sprite to friend
 		print_debug("Friend")
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

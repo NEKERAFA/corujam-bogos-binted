@@ -25,11 +25,6 @@ modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
 position = Vector2(960, 512)
 texture = ExtResource("3_5eukr")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Underground"]
-modulate = Color(0.9254902, 0.3254902, 0.19607843, 1)
-position = Vector2(960, 1536)
-texture = ExtResource("3_5eukr")
-
 [node name="Ground" type="Parallax2D" parent="."]
 repeat_size = Vector2(128, 0)
 repeat_times = 16
