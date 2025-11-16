@@ -8,16 +8,19 @@ enum ProjectileTypeEnum {
 
 @export var speed:Vector2
 @export var type:ProjectileTypeEnum = ProjectileTypeEnum.ENEMY
+@export var sprite:SpriteFrames
 var has_broken=false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.sprite_frames=sprite
 	self.set_linear_velocity(speed)
 	#TODO meter el sprite en vez de los modulate
 	if(1==1):
 		#Change sprite to enemy
 		print_debug("Enemy")
+		
 	else:
 		#change sprite to friend
 		print_debug("Friend")
