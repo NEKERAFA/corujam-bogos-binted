@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqwrtypa35sjq"]
+[gd_scene load_steps=5 format=3 uid="uid://bqwrtypa35sjq"]
 
 [ext_resource type="Script" uid="uid://cs3pp7aqkfw4w" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="StyleBox" uid="uid://bpyjnjfgcv5ad" path="res://assets/theme_overrides/styleBox_for_buttons.tres" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://brj1wpxf6wops" path="res://assets/art/UI/MainMenu/T_MainMenu_Worm_Croped.png" id="3_ob46e"]
+[ext_resource type="PackedScene" uid="uid://ctjfaoxgvsgyx" path="res://scenes/music_controller/music_controller.tscn" id="4_uqeha"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -108,6 +109,8 @@ text = "nono era broma perdón"
 layout_mode = 2
 theme_override_styles/normal = ExtResource("2_0ebjn")
 text = "vale :C"
+
+[node name="MusicController" parent="." instance=ExtResource("4_uqeha")]
 
 [connection signal="pressed" from="FirstScreen/BoxContainer/Start/VBoxContainer/Yes" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="FirstScreen/BoxContainer/Start/VBoxContainer/No" to="." method="_on_button_2_pressed"]

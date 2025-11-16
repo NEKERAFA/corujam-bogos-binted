@@ -36,8 +36,10 @@ func _on_body_entered(body: Node) -> void:
 		match type:
 			ProjectileTypeEnum.ENEMY:
 				(body as Worm).hit()
+				GameManager.hit_sound.emit()
 			ProjectileTypeEnum.FRIEND:
 				(body as Worm).eat()
+				GameManager.eat_sound.emit()
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -46,4 +48,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			GameManager.downgrade_movement()
 		else:
 			GameManager.upgrade_movement()
+			
 		queue_free()
