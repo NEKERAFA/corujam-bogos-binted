@@ -82,6 +82,7 @@ func _physics_process(delta: float) -> void:
 
 func start_jump() -> void:
 	jumped.emit()
+	GameManager.jump_sound.emit()
 	velocity.y = GameManager.movement * jump_multiplier
 
 func can_jump() -> bool:

@@ -11,10 +11,13 @@ func _ready() -> void:
 	$UILayer/Control/TutorialAnimation.play("tutorial")
 	GameManager.game_is_started = true
 	GameManager.max_height_reached.connect(_on_max_height_reached)
+	GameManager.level_music.emit()
+	GameManager.movement_sound.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause_input"):
+		GameManager.level_music.emit(get_tree().paused)
 		get_tree().paused= !get_tree().paused
 		pause_menu.visible= get_tree().paused
 	pass

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	#unpause
+	GameManager.button_music.emit()
 	self.visible=false
 	get_tree().paused= false
 	pass # Replace with function body.
@@ -20,6 +21,7 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	#volver al menú principal
+	GameManager.button_music.emit()
 	get_tree().paused= false
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 	pass # Replace with function body.

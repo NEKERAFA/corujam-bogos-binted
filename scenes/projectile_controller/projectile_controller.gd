@@ -12,6 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func shoot():
 	var spawn_y = rng.randi_range(Globals.min_depth, Globals.max_depth)#32 is the height of the projectile, used here to avoid cliping textures
 	var projectile : Projectile = projectile_node.instantiate()
