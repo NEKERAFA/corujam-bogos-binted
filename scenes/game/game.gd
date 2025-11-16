@@ -3,6 +3,7 @@ extends Node
 
 @onready var end_game_menu := $UILayer/EndGameMenu
 @onready var pause_menu := $UILayer/PauseMenu
+@onready var ranking_menu := $UILayer/RankingMenu
 
 
 @export
@@ -50,3 +51,9 @@ func _on_player_jumped() -> void:
 
 func _open_end_menu():
 	end_game_menu.visible = true
+
+
+func _on_game_ended_menu() -> void:
+	end_game_menu.hide()
+	ranking_menu.set_height(end_game_menu.height)
+	ranking_menu.show()
