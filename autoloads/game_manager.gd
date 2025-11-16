@@ -2,7 +2,7 @@ extends Node
 
 ## Player signal reemitted when max height is reached
 signal max_height_reached(height: float)
-
+signal movement_changed(new_movement : Vector2)
 const MOVEMENT_INCREASE : int = 100
 const MIN_MOVEMENT:int=100
 var movement: int = -500#-128
@@ -28,6 +28,8 @@ func get_velocity() -> Vector2:
 
 func upgrade_movement():
 	movement = clamp(movement-MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement_changed.emit(get_velocity())
 	
 func downgrade_movement():
 	movement = clamp(movement+MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement_changed.emit(get_velocity())

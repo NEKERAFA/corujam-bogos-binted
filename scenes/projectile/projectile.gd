@@ -9,6 +9,7 @@ enum ProjectileTypeEnum {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.movement_changed.connect(update_movement)
 	self.set_linear_velocity(speed)
 	#TODO meter el sprite en vez de los modulate
 	if(1==1):
@@ -39,3 +40,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			GameManager.upgrade_movement()
 		queue_free()
 	pass # Replace with function body.
+	
+func update_movement(new_movement:Vector2):
+	self.set_linear_velocity(new_movement)
