@@ -1,6 +1,5 @@
 extends Control
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$VBoxContainer/Button2.visible = !OS.has_feature("web")
@@ -14,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	#change scene
-	get_tree().change_scene_to_file("res://scenes/mocked_game_controller/mocked_game_controller.tscn")
+	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 	pass # Replace with function body.
 
 

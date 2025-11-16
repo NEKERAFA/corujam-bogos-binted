@@ -23,6 +23,7 @@ var jump_margin: float = 50.0
 var jump_multiplier: float = 3
 
 var is_jumping: bool = false
+var started_falling: bool = false
 
 func _ready() -> void:
 	z_index = 1
@@ -66,8 +67,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Check if the player has reached maximum height to stop the camera
 		if velocity.y > 0:
-			max_height_reached.emit(global_position.y)
-			get_viewport().get_camera_2d().player = null
+			if not started_falling:
+				started_falling = true
+				max_height_reached.emit(global_position.y)
+				get_viewport().get_camera_2d().player = null
 		velocity.y += get_gravity().y * delta
 		rotation = deg_to_rad(get_angle())
 		global_position.y = min(global_position.y, Globals.max_depth)

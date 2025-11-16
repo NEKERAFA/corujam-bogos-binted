@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl782fdmkc6b4"]
+[gd_scene load_steps=9 format=3 uid="uid://dl782fdmkc6b4"]
 
 [ext_resource type="Script" uid="uid://qa18t6jllwdq" path="res://scenes/game/game.gd" id="1_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="2_5i0tg"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="4_87uf6"]
 [ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="5_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://e833sirjobbp" path="res://scenes/projectile_controller/projectile_controller.tscn" id="6_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://cp7su6couqxll" path="res://scenes/end_game_menu/end_game_menu.tscn" id="7_87uf6"]
+[ext_resource type="PackedScene" uid="uid://d074aontaxdo0" path="res://scenes/pause_menu/pause_menu.tscn" id="8_2a8rs"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_lfrn8")
@@ -67,3 +69,9 @@ offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Hello world!"
+
+[node name="EndGameMenu" parent="UILayer" instance=ExtResource("7_87uf6")]
+visible = false
+
+[node name="PauseMenu" parent="UILayer" instance=ExtResource("8_2a8rs")]
+visible = false
