@@ -9,7 +9,8 @@ signal movement_sound()
 signal jump_sound()
 const MOVEMENT_INCREASE : int = 100
 const MIN_MOVEMENT:int=-100
-var movement: int = -200#-128
+const STARTING_MOVEMENT:int = -200
+var movement := STARTING_MOVEMENT
 var distance_traveled: float = 0.0
 var player: CharacterBody2D
 var player_is_jumping: bool = false
@@ -19,6 +20,12 @@ const MAX_MOVEMENT :int = MIN_MOVEMENT*20
 func _process(delta: float) -> void:
 	if not player_is_jumping and game_is_started:
 		distance_traveled += abs(movement * delta)
+
+func reset() -> void:
+	distance_traveled = 0.0
+	movement = STARTING_MOVEMENT
+	player_is_jumping = false
+	game_is_started = false
 
 func set_player(_player: CharacterBody2D) -> void:
 	player = _player

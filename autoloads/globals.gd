@@ -9,8 +9,8 @@ var n_frames: int = 6
 var offset: float = 28.0
 ## Maximum vertical distance between parts
 var max_distance: float = 25.0
-## Maximum rotation of parts (different from head)
-var max_rotation: float = deg_to_rad(35)
+## Maximum rotation of parts
+var max_rotation: float = 35.0
 ## The highest point underground
 var min_depth: float = 100.0
 ## The deepest point underground

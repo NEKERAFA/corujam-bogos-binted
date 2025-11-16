@@ -119,13 +119,10 @@ radius = 32.06
 
 [node name="JumpLabel" type="Label" parent="."]
 unique_name_in_owner = true
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -60.5
-offset_top = -135.52
-offset_right = 60.5
-offset_bottom = -41.520004
+offset_bottom = -195.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ur7pv")

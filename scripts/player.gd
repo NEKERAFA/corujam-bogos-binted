@@ -6,7 +6,6 @@ signal jumped
 ## Signal emitted when player reaches max height
 signal max_height_reached(height: float)
 
-const MAX_ANGLE: float = 45
 const MAX_SPEED: float = 250.0
 const TIME_MAX_SPEED: float = 0.5
 const TURN_SPEED: float = 2500.0
@@ -35,7 +34,6 @@ func _ready() -> void:
 		_worm_part.worm_part_data.previous_part_data = _previous_part_data
 		_worm_part.n_frames = Globals.n_frames
 		_worm_part.max_distance = Globals.max_distance
-		_worm_part.max_rotation = Globals.max_rotation
 		_worm_part.position.x = position.x - Globals.offset * (n+1)
 		_worm_part.position.y = position.y
 		_previous_part_data = _worm_part.worm_part_data
@@ -70,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			if not started_falling:
 				started_falling = true
-				max_height_reached.emit(global_position.y)
+				max_height_reached.emit(global_position.y - 32)
 				get_viewport().get_camera_2d().player = null
 		velocity.y += get_gravity().y * delta
 		rotation = deg_to_rad(get_angle())
@@ -86,12 +84,12 @@ func start_jump() -> void:
 	velocity.y = GameManager.movement * jump_multiplier
 
 func can_jump() -> bool:
-	return global_position.y <= Globals.min_depth + jump_margin
+	return not is_jumping and (global_position.y <= Globals.min_depth + jump_margin)
 
 func get_angle() -> float:
 	## TODO: head rotation when jumping: bug or feature?
 	if is_jumping or (global_position.y > Globals.min_depth and global_position.y < Globals.max_depth):
-		return (velocity.y * MAX_ANGLE) / MAX_SPEED
+		return (velocity.y * Globals.max_rotation) / MAX_SPEED
 	else:
 		return 0
 
