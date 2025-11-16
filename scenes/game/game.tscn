@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl782fdmkc6b4"]
+[gd_scene load_steps=13 format=3 uid="uid://dl782fdmkc6b4"]
 
 [ext_resource type="Script" uid="uid://qa18t6jllwdq" path="res://scenes/game/game.gd" id="1_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="2_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://cyvtjrgyvh3kr" path="res://scenes/vfx/earth_out/earth_out.tscn" id="3_2a8rs"]
 [ext_resource type="Script" uid="uid://b7sdi6kqbipg2" path="res://scripts/player_trail.gd" id="3_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="4_87uf6"]
 [ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="5_2a8rs"]
@@ -52,6 +53,9 @@ player = NodePath("PlayerLayer/Player")
 
 [node name="ScenarioLayer" parent="." instance=ExtResource("2_5i0tg")]
 follow_viewport_enabled = true
+
+[node name="EarthOut" parent="ScenarioLayer" instance=ExtResource("3_2a8rs")]
+unique_name_in_owner = true
 
 [node name="ProjectileLayer" type="CanvasLayer" parent="."]
 layer = 2

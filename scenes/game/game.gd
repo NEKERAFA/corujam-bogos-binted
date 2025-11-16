@@ -1,7 +1,9 @@
 extends Node
 
+
 @onready var end_game_menu := $UILayer/EndGameMenu
 @onready var pause_menu := $UILayer/PauseMenu
+
 
 @export
 var player: Node2D = null
@@ -11,6 +13,8 @@ func _ready() -> void:
 	$UILayer/Control/TutorialAnimation.play("tutorial")
 	GameManager.game_is_started = true
 	GameManager.max_height_reached.connect(_on_max_height_reached)
+	(player.get_node("Player") as Worm).jumped.connect(_on_player_jumped)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,6 +38,12 @@ func _on_max_height_reached(height: float) -> void:
 	timer_to_end.one_shot = true
 	timer_to_end.timeout.connect(_open_end_menu)
 	timer_to_end.start()
+
+
+func _on_player_jumped() -> void:
+	%EarthOut.position = player.get_node('Player').global_position
+	%EarthOut.position.y -= Globals.min_depth
+	%EarthOut.show()
 
 func _open_end_menu():
 	end_game_menu.visible = true
