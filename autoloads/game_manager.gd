@@ -9,6 +9,7 @@ signal movement_sound()
 signal jump_sound()
 signal eat_sound()
 signal hit_sound()
+signal main_menu_music()
 const MOVEMENT_INCREASE : int = 100
 const MIN_MOVEMENT:int=-100
 const STARTING_MOVEMENT:int = -200

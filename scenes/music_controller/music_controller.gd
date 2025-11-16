@@ -9,6 +9,7 @@ func _ready() -> void:
 	GameManager.connect("jump_sound", play_jump_sound)
 	GameManager.connect("hit_sound", play_hit_sound)
 	GameManager.connect("eat_sound", play_eat_sound)
+	GameManager.connect("main_menu_music", play_main_menu_music)
 	pass # Replace with function body.
 
 
@@ -35,3 +36,6 @@ func play_eat_sound():
 func play_hit_sound():
 	$hit_sound.play()
 	$hit_ound_2.play()
+
+func play_main_menu_music():
+	$main_menu_sound.play()
