@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 func _on_max_height_reached(height: float) -> void:
 	if player != null and not %HeightMark.visible:
-		%HeightMark.position.x = player.get_node('Player').global_position.x - 256
+		%HeightMark.position.x = player.get_node('Player').global_position.x - 128
 		%HeightMark.position.y = height
 		%HeightMark.show()
 		%HeightMark.get_node("HeightLabel").text = "%.2f m" % (-height / 100)
