@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://brvpvtqvfbld8"]
+[gd_scene load_steps=8 format=3 uid="uid://brvpvtqvfbld8"]
 
 [ext_resource type="Script" uid="uid://dkg1uh35dgey5" path="res://scenes/scenario/scenario_controller.gd" id="1_w4sjf"]
 [ext_resource type="Texture2D" uid="uid://c6aio1e23y0sd" path="res://assets/art/Props/Backgrounds/Parallax/T_Parallax_Back.png" id="2_dbp2g"]
 [ext_resource type="Texture2D" uid="uid://bvs5nfy7w888q" path="res://assets/art/Props/Backgrounds/T_Earth_Fill.png" id="3_5eukr"]
+[ext_resource type="Texture2D" uid="uid://cnkuasuljys7p" path="res://assets/art/Props/Backgrounds/Parallax/T_Parallax_BackExtension.png" id="3_ehepe"]
 [ext_resource type="Texture2D" uid="uid://qn5ora24gbl0" path="res://assets/art/Props/Backgrounds/Parallax/T_Parallax_Mid.png" id="3_koqek"]
 [ext_resource type="Texture2D" uid="uid://cjcps8y6gopol" path="res://assets/art/Props/Backgrounds/T_Earth_Border.png" id="4_7oyfd"]
 [ext_resource type="Texture2D" uid="uid://ckrytc8rmrmhs" path="res://assets/art/Props/Backgrounds/Parallax/T_Parallax_Front.png" id="4_ehepe"]
@@ -17,6 +18,10 @@ repeat_times = 2
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
 position = Vector2(960, -600)
 texture = ExtResource("2_dbp2g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sky"]
+position = Vector2(960, -1480)
+texture = ExtResource("3_ehepe")
 
 [node name="Middle" type="Parallax2D" parent="."]
 repeat_size = Vector2(1024, 0)
