@@ -11,13 +11,8 @@
 script = ExtResource("1_lfrn8")
 
 [node name="ScenarioLayer" parent="." instance=ExtResource("2_5i0tg")]
+visible = false
 follow_viewport_enabled = true
-
-[node name="ProjectileLayer" type="CanvasLayer" parent="."]
-layer = 2
-follow_viewport_enabled = true
-
-[node name="ProjectileController" parent="ProjectileLayer" instance=ExtResource("6_5i0tg")]
 
 [node name="PlayerLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -47,6 +42,7 @@ player = NodePath("../PlayerLayer/Player")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 99
+visible = false
 
 [node name="Control" type="Control" parent="UILayer"]
 layout_mode = 3
@@ -67,3 +63,5 @@ offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Hello world!"
+
+[node name="ProjectileController" parent="." instance=ExtResource("6_5i0tg")]

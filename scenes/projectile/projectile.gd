@@ -1,15 +1,18 @@
 extends RigidBody2D
 class_name Projectile
+
 enum ProjectileTypeEnum {
 	ENEMY,
 	FRIEND
 }
+
 @export var speed:Vector2
 @export var type:ProjectileTypeEnum = ProjectileTypeEnum.ENEMY
+var has_broken=false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.movement_changed.connect(update_movement)
 	self.set_linear_velocity(speed)
 	#TODO meter el sprite en vez de los modulate
 	if(1==1):
@@ -20,14 +23,19 @@ func _ready() -> void:
 		print_debug("Friend")
 	pass # Replace with function body.
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	self.set_linear_velocity(GameManager.get_velocity())
 	if(global_position.x<-100):
 		queue_free()
 	pass
 
+
 func _on_body_entered(body: Node) -> void:
-	if body is Worm:
+	if(!has_broken):
+		has_broken=true
+		self.set_freeze_enabled.call_deferred(true)
 		$AnimatedSprite2D.play("break")
 	pass # Replace with function body.
 
@@ -40,6 +48,3 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			GameManager.upgrade_movement()
 		queue_free()
 	pass # Replace with function body.
-	
-func update_movement(new_movement:Vector2):
-	self.set_linear_velocity(new_movement)
