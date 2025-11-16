@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl782fdmkc6b4"]
+[gd_scene load_steps=6 format=3 uid="uid://dl782fdmkc6b4"]
 
-[ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="1_pssa7"]
-[ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="2_7w8s4"]
-[ext_resource type="Script" uid="uid://b7sdi6kqbipg2" path="res://scripts/player_trail.gd" id="3_7w8s4"]
-[ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="4_ucs8h"]
+[ext_resource type="Script" uid="uid://qa18t6jllwdq" path="res://scenes/game/game.gd" id="1_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://brvpvtqvfbld8" path="res://scenes/scenario/scenario.tscn" id="2_5i0tg"]
+[ext_resource type="Script" uid="uid://b7sdi6kqbipg2" path="res://scripts/player_trail.gd" id="3_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://b8wtquj2yi8bp" path="res://scenes/player.tscn" id="4_87uf6"]
+[ext_resource type="Script" uid="uid://c63rsogdurpe3" path="res://scripts/camera_controller.gd" id="5_2a8rs"]
 
-[node name="Example" type="Node"]
+[node name="Game" type="Node"]
+script = ExtResource("1_lfrn8")
 
-[node name="ScenarioLayer" parent="." instance=ExtResource("1_pssa7")]
+[node name="ScenarioLayer" parent="." instance=ExtResource("2_5i0tg")]
 follow_viewport_enabled = true
 
 [node name="PlayerLayer" type="CanvasLayer" parent="."]
@@ -21,10 +23,10 @@ default_color = Color(0.3158058, 0.15453127, 0.088066556, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_7w8s4")
+script = ExtResource("3_bdhmt")
 player = NodePath("../Player")
 
-[node name="Player" parent="PlayerLayer" instance=ExtResource("2_7w8s4")]
+[node name="Player" parent="PlayerLayer" instance=ExtResource("4_87uf6")]
 position = Vector2(960, 291)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -33,7 +35,7 @@ offset = Vector2(200, 0)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 25.0
-script = ExtResource("4_ucs8h")
+script = ExtResource("5_2a8rs")
 player = NodePath("../PlayerLayer/Player")
 
 [node name="UILayer" type="CanvasLayer" parent="."]

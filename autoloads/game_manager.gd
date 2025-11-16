@@ -9,9 +9,10 @@ var movement: int = -500#-128
 var distance_traveled: float = 0.0
 var player: CharacterBody2D
 var player_is_jumping: bool = false
+var game_is_started: bool = false
 
 func _process(delta: float) -> void:
-	if not player_is_jumping:
+	if not player_is_jumping and game_is_started:
 		distance_traveled += abs(movement * delta)
 
 func set_player(_player: CharacterBody2D) -> void:
