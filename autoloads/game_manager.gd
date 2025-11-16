@@ -4,7 +4,7 @@ extends Node
 signal max_height_reached(height: float)
 signal movement_changed(new_movement : Vector2)
 const MOVEMENT_INCREASE : int = 100
-const MIN_MOVEMENT:int=100
+const MIN_MOVEMENT:int=-100
 var movement: int = -500#-128
 var distance_traveled: float = 0.0
 var player: CharacterBody2D
@@ -27,9 +27,9 @@ func get_velocity() -> Vector2:
 	return Vector2.RIGHT * float(movement)
 
 func upgrade_movement():
-	movement = clamp(movement-MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement = clamp(movement-MOVEMENT_INCREASE,MIN_MOVEMENT*10, MIN_MOVEMENT )
 	movement_changed.emit(get_velocity())
 	
 func downgrade_movement():
-	movement = clamp(movement+MOVEMENT_INCREASE, MIN_MOVEMENT, MIN_MOVEMENT*100)
+	movement = clamp(movement+MOVEMENT_INCREASE, MIN_MOVEMENT*10,MIN_MOVEMENT )
 	movement_changed.emit(get_velocity())

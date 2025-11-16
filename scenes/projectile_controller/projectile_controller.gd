@@ -12,12 +12,11 @@ func _process(delta: float) -> void:
 	pass
 
 func shoot():
-	#TODO change -520 for GLOBAL max depth
-	var spawn_y = rng.randi_range(-32, -520)#32 is the height of the projectile, used here to avoid cliping textures
+	var spawn_y = rng.randi_range(Globals.min_depth, Globals.max_depth)#32 is the height of the projectile, used here to avoid cliping textures
 	var projectile : Projectile = projectile_node.instantiate()
 	projectile.speed = GameManager.get_velocity()
 	add_child(projectile)
-	projectile.position = Vector2(980, spawn_y)
+	projectile.position = Vector2(1920, spawn_y)#TODO meter el número en una constante
 
 
 func _on_timer_timeout() -> void:
